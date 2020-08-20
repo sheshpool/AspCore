@@ -112,3 +112,4 @@ C:\git\AspCore\Web.UI\Web.UI\obj\Debug\netcoreapp3.1\staticwebassets\AspCoreUdem
 C:\git\AspCore\Web.UI\Web.UI\obj\Debug\netcoreapp3.1\staticwebassets\AspCoreUdemy.Web.UI.StaticWebAssets.xml
 C:\git\AspCore\Web.UI\Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.Web.UI.genruntimeconfig.cache
 C:\git\AspCore\Web.UI\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Paragraphe\index.cshtml.g.cs
+C:\git\AspCore\Web.UI\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Paragraphe\Create.cshtml.g.cs
