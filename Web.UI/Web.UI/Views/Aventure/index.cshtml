@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewBag.Title</h1>
+@foreach (var item in ViewBag.Tableau)
+{
+<h3>@item</h3>
+}
