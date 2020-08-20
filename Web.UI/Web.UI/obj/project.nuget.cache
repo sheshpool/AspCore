@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rhvac/k+Yqi0fS13VH0fEms7h7zEg3AaAKXYO0tGxCnb7uhiGNv+xzd77UxNezWA1/OyyZYFYc8MnQFEnjeDdA==",
+  "dgSpecHash": "GPpQ/lM1cMOkwFvXNNTGJw7F8RA9CT3xwq4QdcVYh0N3YGoquN25dUum5Najhug3S3a7UEmKIoLAPJaoNHvQcA==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj",
+  "projectFilePath": "C:\\git\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hkh\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\hkh\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

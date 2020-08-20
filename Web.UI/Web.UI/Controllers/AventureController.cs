@@ -10,7 +10,7 @@ namespace Web.UI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Aventure";
+            ViewBag.Title = "Aventures";
             ViewBag.Tableau = new string[] { "Aventure 1", "Aventure 2", "Aventure 3", "Aventure 4", "Aventure 5" };
             return View();
         }

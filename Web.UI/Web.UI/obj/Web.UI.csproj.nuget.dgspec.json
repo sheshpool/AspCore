@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj": {}
+    "C:\\git\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj": {
+    "C:\\git\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj",
+        "projectUniqueName": "C:\\git\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj",
         "projectName": "Web.UI",
-        "projectPath": "C:\\Projects\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj",
+        "projectPath": "C:\\git\\AspCore\\Web.UI\\Web.UI\\Web.UI.csproj",
         "packagesPath": "C:\\Users\\hkh\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\AspCore\\Web.UI\\Web.UI\\obj\\",
+        "outputPath": "C:\\git\\AspCore\\Web.UI\\Web.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
