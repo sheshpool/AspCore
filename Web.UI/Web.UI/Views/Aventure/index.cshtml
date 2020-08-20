@@ -1,4 +1,6 @@
-﻿@{
+﻿@using AspCoreUdemy.Core.Data;
+@model List<Aventure>
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,11 +11,11 @@
 </div>
 <h2 class="text-center">Vos dernières aventures</h2>
 <div class="row">
-    @foreach (var item in ViewBag.Tableau)
+    @foreach (var aventure in Model)
     {
         <a href="#" class="card border m-1 text-center" style="width: 7em;">
             <div class="card-body">
-                @item
+               @aventure.Titre
             </div>
         </a>
     }

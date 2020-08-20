@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using AspCoreUdemy.Core.Data;
 
 namespace Web.UI.Controllers
 {
     public class AventureController : Controller
     {
-        public ActionResult Index()
+        public IActionResult Index()
         {
             ViewBag.Title = "Aventures";
-            ViewBag.Tableau = new string[] { "Aventure 1", "Aventure 2", "Aventure 3", "Aventure 4", "Aventure 5" };
-            return View();
+
+            List<Aventure> aventures = new List<Aventure>();
+            aventures.Add(new Aventure() { Id = 1, Titre = "Ma première aventure" });
+            aventures.Add(new Aventure() { Id = 2, Titre = "Ma seconde aventure" });
+            aventures.Add(new Aventure() { Id = 3, Titre = "Ma troisièrme aventure" });
+
+            return View(aventures);
         }
     }
 }

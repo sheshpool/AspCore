@@ -1,0 +1,9 @@
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\bin\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.deps.json
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\bin\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.dll
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\bin\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.pdb
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.AssemblyInfoInputs.cache
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.AssemblyInfo.cs
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.csproj.CoreCompileInputs.cache
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.dll
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.pdb
+C:\git\AspCore\Web.UI\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.csprojAssemblyReference.cache

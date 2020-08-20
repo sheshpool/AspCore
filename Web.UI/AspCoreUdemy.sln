@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csproj", "{50450CA7-FB7C-499D-92F9-7BC0D99E8ADB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreUdemy.Web.UI", "Web.UI\AspCoreUdemy.Web.UI.csproj", "{50450CA7-FB7C-499D-92F9-7BC0D99E8ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspCoreUdemy.Core.Data", "AspCoreUdemy.Core.Data\AspCoreUdemy.Core.Data.csproj", "{DFFA0D03-9072-4601-8469-0761BCB68B0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{CEB0066D-E984-4FDC-8B1B-7563AD2EC7AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{50450CA7-FB7C-499D-92F9-7BC0D99E8ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50450CA7-FB7C-499D-92F9-7BC0D99E8ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50450CA7-FB7C-499D-92F9-7BC0D99E8ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFFA0D03-9072-4601-8469-0761BCB68B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFFA0D03-9072-4601-8469-0761BCB68B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFFA0D03-9072-4601-8469-0761BCB68B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFFA0D03-9072-4601-8469-0761BCB68B0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFFA0D03-9072-4601-8469-0761BCB68B0B} = {CEB0066D-E984-4FDC-8B1B-7563AD2EC7AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6A2894D-412C-4749-A01E-6A20AB6287B5}
