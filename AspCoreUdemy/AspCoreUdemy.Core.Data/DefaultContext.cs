@@ -18,7 +18,7 @@ namespace AspCoreUdemy.Core.Data
         }
 
         public DbSet<Aventure> Aventures { get; set; }
-        public DbSet<Paragraphe> paragraphes { get; set; }
+        public DbSet<Paragraphe> Paragraphes { get; set; }
 
     }
 }

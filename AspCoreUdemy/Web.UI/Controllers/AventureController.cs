@@ -24,13 +24,6 @@ namespace Web.UI.Controllers
             var query = from item in this._context.Aventures
                         select item;
 
-
-
-            List < Aventure > aventures = new List<Aventure>();
-            aventures.Add(new Aventure() { Id = 1, Titre = "Ma première aventure" });
-            aventures.Add(new Aventure() { Id = 2, Titre = "Ma seconde aventure" });
-            aventures.Add(new Aventure() { Id = 3, Titre = "Ma troisièrme aventure" });
-
             return View(query.ToList());
         }
     }

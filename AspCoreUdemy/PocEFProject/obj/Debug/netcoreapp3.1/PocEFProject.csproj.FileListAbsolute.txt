@@ -1,0 +1,13 @@
+C:\git\AspCore\AspCoreUdemy\PocEFProject\bin\Debug\netcoreapp3.1\PocEFProject.exe
+C:\git\AspCore\AspCoreUdemy\PocEFProject\bin\Debug\netcoreapp3.1\PocEFProject.deps.json
+C:\git\AspCore\AspCoreUdemy\PocEFProject\bin\Debug\netcoreapp3.1\PocEFProject.runtimeconfig.json
+C:\git\AspCore\AspCoreUdemy\PocEFProject\bin\Debug\netcoreapp3.1\PocEFProject.runtimeconfig.dev.json
+C:\git\AspCore\AspCoreUdemy\PocEFProject\bin\Debug\netcoreapp3.1\PocEFProject.dll
+C:\git\AspCore\AspCoreUdemy\PocEFProject\bin\Debug\netcoreapp3.1\PocEFProject.pdb
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.csprojAssemblyReference.cache
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.AssemblyInfoInputs.cache
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.AssemblyInfo.cs
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.csproj.CoreCompileInputs.cache
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.dll
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.pdb
+C:\git\AspCore\AspCoreUdemy\PocEFProject\obj\Debug\netcoreapp3.1\PocEFProject.genruntimeconfig.cache

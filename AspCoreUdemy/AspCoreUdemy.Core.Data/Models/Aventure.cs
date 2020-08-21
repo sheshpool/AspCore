@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace AspCoreUdemy.Core.Data.Models
 {
-    [Table("Aventure")]
+    [Table("Aventure", Schema = "dbo")]
     public class Aventure
     {
         public int Id { get; set; }
         public string Titre { get; set; }
-
     }
 }
