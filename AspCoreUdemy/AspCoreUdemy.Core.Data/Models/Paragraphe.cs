@@ -22,6 +22,6 @@ namespace AspCoreUdemy.Core.Data.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "La description doit être renseignée.")]
         public string Description { get; set; }
 
-        public Question MaQuestion { get; set; }
+        public List<Question> MesQuestions { get; set; }
     }
 }

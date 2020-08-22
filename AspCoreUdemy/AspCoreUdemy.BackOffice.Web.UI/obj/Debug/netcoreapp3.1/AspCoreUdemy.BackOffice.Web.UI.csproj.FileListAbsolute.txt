@@ -277,3 +277,11 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Question\Create.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Question\Index.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Question\Delete.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Question\Edit.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Question\Details.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Reponse\Index.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Reponse\Create.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Reponse\Delete.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Reponse\Details.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Reponse\Edit.cshtml.g.cs

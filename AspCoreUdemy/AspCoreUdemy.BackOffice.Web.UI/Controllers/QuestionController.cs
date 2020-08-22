@@ -42,5 +42,60 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             }
             return RedirectToAction("Index");
         }
+
+
+        public IActionResult Delete(int id)
+        {
+            Question question = null;
+            question = this._context.Questions.First(item => item.Id == id);
+
+            return View(question);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Question question)
+        {
+
+            this._context.Remove(question);
+
+            this._context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            Question question = null;
+            question = this._context.Questions.First(item => item.Id == id);
+
+            this.ViewBag.ParagraphesList = this._context.Paragraphes.ToList();
+
+            return View(question);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Question question)
+        {
+
+            Question questionToEdit = null;
+            questionToEdit = this._context.Questions.First(item => item.Id == question.Id);
+
+            questionToEdit.ParagrapheId = question.ParagrapheId;
+            questionToEdit.Titre = question.Titre;
+
+            this._context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Question question = null;
+            question = this._context.Questions.First(item => item.Id == id);
+
+            return View(question);
+        }
+
+
     }
 }
