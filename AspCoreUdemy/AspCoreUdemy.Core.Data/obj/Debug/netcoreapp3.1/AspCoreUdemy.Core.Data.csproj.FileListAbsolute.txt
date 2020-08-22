@@ -19,3 +19,4 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCo
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Debug\netcoreapp3.1\appsettings.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.csproj.CoreCompileInputs.cache
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Debug\netcoreapp3.1\AspCoreUdemy.Core.Data.csprojAssemblyReference.cache
