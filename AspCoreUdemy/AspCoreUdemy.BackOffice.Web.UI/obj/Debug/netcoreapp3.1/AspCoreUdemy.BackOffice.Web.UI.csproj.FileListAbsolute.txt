@@ -270,3 +270,8 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cache
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Paragraphe\Delete.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Paragraphe\Details.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
