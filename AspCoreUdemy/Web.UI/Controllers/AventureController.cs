@@ -17,6 +17,31 @@ namespace Web.UI.Controllers
             this._context = context;
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Aventure aventure)
+        {
+            ActionResult result = View();
+
+            if (this.ModelState.IsValid)
+            {
+                this._context.Aventures.Add(aventure);
+                this._context.SaveChanges();
+
+                result = RedirectToAction("AventureBegin");
+            }
+            return result;
+        }
+
+        IActionResult AventureBegin()
+        {
+
+            return View();
+        }
         public IActionResult Index()
         {
             ViewBag.Title = "Aventures";

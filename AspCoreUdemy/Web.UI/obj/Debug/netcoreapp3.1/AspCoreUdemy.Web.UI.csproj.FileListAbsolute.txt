@@ -267,3 +267,5 @@ C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.
 C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Aventure\Create.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Aventure\AventureBegin.cshtml.g.cs
