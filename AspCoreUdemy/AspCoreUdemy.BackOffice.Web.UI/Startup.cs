@@ -54,6 +54,13 @@ namespace AspCoreUdemy.BackOffice.Web.UI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "paragrapheEdit",
+                    pattern: "edition-paragraphe/{id}",
+                    defaults: new { controller = "Paragraphe", action = "Edit" },
+                    constraints: new {id = @"\d+"}
+                    );
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
