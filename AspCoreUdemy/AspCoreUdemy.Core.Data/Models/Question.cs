@@ -6,14 +6,14 @@ using System.Text;
 
 namespace AspCoreUdemy.Core.Data.Models
 {
-    [Table("Question", Schema = "dbo")]
+    [Table("Question", Schema = "app")]
     public class Question
     {
         [Key]
         public int Id { get; set; }
+  
         public string Titre { get; set; }
-
-        public int ParagrapheId { get; set; }
-        public  List<Reponse> MesReponses { get; set; }
+        public int SubjectId { get; set; }
+        public  List<Proposition> Responses { get; set; }
     }
 }

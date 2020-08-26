@@ -222,7 +222,6 @@ C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.Web.UI.R
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.Web.UI.TagHelpers.input.cache
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.Web.UI.TagHelpers.output.cache
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.Web.UI.RazorCoreGenerate.cache
-C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Aventure\index.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -267,5 +266,6 @@ C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.
 C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Aventure\Create.cshtml.g.cs
-C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Aventure\AventureBegin.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Exam\Create.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Exam\ExamBegin.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Exam\Index.cshtml.g.cs

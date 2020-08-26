@@ -27,7 +27,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Create()
         {
-            this.ViewBag.ParagraphesList = this._context.Paragraphes.ToList();
+            this.ViewBag.SubjectList = this._context.Subjects.ToList();
 
             return View();
         }
@@ -68,7 +68,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             Question question = null;
             question = this._context.Questions.First(item => item.Id == id);
 
-            this.ViewBag.ParagraphesList = this._context.Paragraphes.ToList();
+            this.ViewBag.SubjectList = this._context.Subjects.ToList();
 
             return View(question);
         }
@@ -80,7 +80,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             Question questionToEdit = null;
             questionToEdit = this._context.Questions.First(item => item.Id == question.Id);
 
-            questionToEdit.ParagrapheId = question.ParagrapheId;
+            questionToEdit.SubjectId = question.SubjectId;
             questionToEdit.Titre = question.Titre;
 
             this._context.SaveChanges();
