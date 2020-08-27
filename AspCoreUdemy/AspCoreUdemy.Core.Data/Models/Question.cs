@@ -14,6 +14,6 @@ namespace AspCoreUdemy.Core.Data.Models
   
         public string Titre { get; set; }
         public int SubjectId { get; set; }
-        public  List<Proposition> Responses { get; set; }
+        public  List<Response> Responses { get; set; }
     }
 }

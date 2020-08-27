@@ -32,7 +32,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Proposition reponse)
+        public IActionResult Create(Response reponse)
         {
             if (this.ModelState.IsValid)
             {
@@ -45,14 +45,14 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Delete(int id)
         {
-            Proposition reponse = null;
+            Response reponse = null;
             reponse = this._context.Reponses.First(item => item.Id == id);
 
             return View(reponse);
         }
 
         [HttpPost]
-        public IActionResult Delete(Proposition reponse)
+        public IActionResult Delete(Response reponse)
         {
 
             this._context.Remove(reponse);
@@ -64,7 +64,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Edit(int id)
         {
-            Proposition reponse = null;
+            Response reponse = null;
             reponse = this._context.Reponses.First(item => item.Id == id);
 
             this.ViewBag.QuestionList = this._context.Questions.ToList();
@@ -73,10 +73,10 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Proposition reponse)
+        public IActionResult Edit(Response reponse)
         {
 
-            Proposition reponseToEdit = null;
+            Response reponseToEdit = null;
             reponseToEdit = this._context.Reponses.First(item => item.Id == reponse.Id);
 
             reponseToEdit.QuestionId = reponse.QuestionId;
@@ -89,7 +89,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Details(int id)
         {
-            Proposition reponse = null;
+            Response reponse = null;
             reponse = this._context.Reponses.First(item => item.Id == id);
 
             return View(reponse);
