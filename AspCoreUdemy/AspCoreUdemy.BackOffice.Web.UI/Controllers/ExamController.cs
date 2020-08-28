@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
+using AspCoreUdemy.Core.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
@@ -21,5 +23,61 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
                         select item;
             return View(query.ToList());
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Exam exam)
+        {
+            if(this.ModelState.IsValid)
+            {
+                this._context.Exams.Add(exam);
+                this._context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+
+        }
+
+        public IActionResult Edit(int id)
+        {
+            Exam exam = null;
+
+            exam = this._context.Exams.First(item => item.Id == id);
+
+            return View(exam);
+        }
+
+        public IActionResult Details(int id)
+        {
+            Exam exam = null;
+            exam = this._context.Exams.First(item => item.Id == id);
+
+            return View(exam);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Exam exam = null;
+            exam = this._context.Exams.First(item => item.Id == id);
+
+            return View(exam);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Exam exam)
+        {
+
+            this._context.Remove(exam);
+
+            this._context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

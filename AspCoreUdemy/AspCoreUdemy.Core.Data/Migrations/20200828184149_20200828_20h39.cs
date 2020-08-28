@@ -2,7 +2,7 @@
 
 namespace AspCoreUdemy.Core.Data.Migrations
 {
-    public partial class _20200828_00h32 : Migration
+    public partial class _20200828_20h39 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace AspCoreUdemy.Core.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Titre = table.Column<string>(nullable: false)
+                    Titre = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,6 +55,7 @@ namespace AspCoreUdemy.Core.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titre = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
                     SubjectId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

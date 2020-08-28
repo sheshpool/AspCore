@@ -14,6 +14,7 @@ namespace AspCoreUdemy.Core.Data.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre ne doit pas être vide.")]
         public string Titre { get; set; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La description ne doit pas être vide.")]
         public string Description { get; set; }
         public List<Subject> Subjects { get; set; }
     }
