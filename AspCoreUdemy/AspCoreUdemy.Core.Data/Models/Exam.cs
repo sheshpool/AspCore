@@ -13,5 +13,8 @@ namespace AspCoreUdemy.Core.Data.Models
         public int Id { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre ne doit pas être vide.")]
         public string Titre { get; set; }
+
+        public string Description { get; set; }
+        public List<Subject> Subjects { get; set; }
     }
 }

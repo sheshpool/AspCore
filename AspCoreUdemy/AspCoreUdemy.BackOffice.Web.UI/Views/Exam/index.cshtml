@@ -1,22 +1,42 @@
-﻿@using AspCoreUdemy.Core.Data.Models;
-@model List<Exam>
+﻿@model IEnumerable<AspCoreUdemy.Core.Data.Models.Exam>
+
 @{
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Exams</h1>
 
-<h1 class="text-center">@ViewBag.Title</h1>
-<div class="row justify-content-center">
-    <a class="btn btn-primary" asp-controller="Aventure" , asp-action="Create">Nouvel examen</a>
-</div>
-<h2 class="text-center">Vos dernier examens</h2>
-<div class="row">
-    @foreach (var exam in Model)
-    {
-        <a href="#" class="card border m-1 text-center" style="width: 7em;">
-            <div class="card-body">
-               @exam.Titre
-            </div>
-        </a>
-    }
-</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

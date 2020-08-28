@@ -1,0 +1,24 @@
+﻿@using AspCoreUdemy.Core.Data.Models;
+@model List<Exam>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="text-center">@ViewBag.Title</h1>
+<!--
+<div class="row justify-content-center">
+    <a class="btn btn-primary" asp-controller="Exam" , asp-action="Create">Nouvel examen</a>
+</div>
+    -->
+<h2 class="text-center">Liste des examens</h2>
+<div class="row">
+    @foreach (var exam in Model)
+    {
+        <a href="#" class="card border m-1 text-center" style="width: 7em;">
+            <div class="card-body">
+                @exam.Titre
+            </div>
+        </a>
+    }
+</div>

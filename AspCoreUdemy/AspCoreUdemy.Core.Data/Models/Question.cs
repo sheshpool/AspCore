@@ -13,6 +13,8 @@ namespace AspCoreUdemy.Core.Data.Models
         public int Id { get; set; }
   
         public string Titre { get; set; }
+
+        public string Description { get; set; }
         public int SubjectId { get; set; }
         public  List<Response> Responses { get; set; }
     }

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspCoreUdemy.Core.Data.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    [Migration("20200826175145_20200826_19h51")]
-    partial class _20200826_19h51
+    [Migration("20200827223301_20200828_00h32")]
+    partial class _20200828_00h32
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -90,11 +90,16 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Titre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ExamId");
 
                     b.ToTable("Subject","app");
                 });
@@ -113,6 +118,15 @@ namespace AspCoreUdemy.Core.Data.Migrations
                     b.HasOne("AspCoreUdemy.Core.Data.Models.Question", null)
                         .WithMany("Responses")
                         .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.Subject", b =>
+                {
+                    b.HasOne("AspCoreUdemy.Core.Data.Models.Exam", null)
+                        .WithMany("Subjects")
+                        .HasForeignKey("ExamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

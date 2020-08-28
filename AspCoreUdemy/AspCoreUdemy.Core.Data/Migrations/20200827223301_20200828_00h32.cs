@@ -2,7 +2,7 @@
 
 namespace AspCoreUdemy.Core.Data.Migrations
 {
-    public partial class _20200826_19h51 : Migration
+    public partial class _20200828_00h32 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,11 +31,19 @@ namespace AspCoreUdemy.Core.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titre = table.Column<string>(nullable: false),
-                    Description = table.Column<string>(nullable: false)
+                    Description = table.Column<string>(nullable: false),
+                    ExamId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Subject", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Subject_Exam_ExamId",
+                        column: x => x.ExamId,
+                        principalSchema: "app",
+                        principalTable: "Exam",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,14 +102,16 @@ namespace AspCoreUdemy.Core.Data.Migrations
                 schema: "app",
                 table: "Response",
                 column: "QuestionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Subject_ExamId",
+                schema: "app",
+                table: "Subject",
+                column: "ExamId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Exam",
-                schema: "app");
-
             migrationBuilder.DropTable(
                 name: "Response",
                 schema: "app");
@@ -112,6 +122,10 @@ namespace AspCoreUdemy.Core.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Subject",
+                schema: "app");
+
+            migrationBuilder.DropTable(
+                name: "Exam",
                 schema: "app");
         }
     }
