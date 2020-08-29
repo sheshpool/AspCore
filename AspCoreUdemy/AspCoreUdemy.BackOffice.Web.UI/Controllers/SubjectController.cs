@@ -51,16 +51,23 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
         }
         public IActionResult Create()
         {
+            List<Exam> examList = new List<Exam>(); 
+            
+            examList = this._context.Exams.ToList();
+            examList.Insert(0, new Exam { Id = 0, Titre = "Select exam"});
+
+            this.ViewBag.ExamList = examList;
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Subject paragraphe)
+        public IActionResult Create(Subject subject)
         {
 
             if (this.ModelState.IsValid)
             {
-                this._context.Subjects.Add(paragraphe);
+                this._context.Subjects.Add(subject);
                 this._context.SaveChanges();
             }
             return RedirectToAction("Index");

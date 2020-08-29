@@ -51,6 +51,21 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             return View(exam);
         }
 
+        [HttpPost]
+        public IActionResult Edit(Exam exam)
+        {
+
+            Exam examToEdit = null;
+            examToEdit = this._context.Exams.First(item => item.Id == exam.Id);
+
+            examToEdit.Titre = exam.Titre;
+            examToEdit.Description = exam.Description;
+
+            this._context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Details(int id)
         {
             Exam exam = null;

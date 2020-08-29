@@ -3,16 +3,26 @@
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<AspCoreUdemy.Core.Data.Models.Exam> examList = null;
+    examList = this.ViewBag.ExamList;
+    var listItems = examList.Select(item => new SelectListItem() { Text = item.Titre, Value = item.Id.ToString() }).ToList();
 }
 
 <h1>Create</h1>
 
-<h4>Paragraphe</h4>
+<h4>Subject</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="ExamId" class="control-label">Exam</label>
+                <select asp-for="ExamId" asp-items="listItems" class="form-control"></select>
+                <span asp-validation-for="ExamId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Titre" class="control-label"></label>
                 <input asp-for="Titre" class="form-control" />
