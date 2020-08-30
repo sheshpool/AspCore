@@ -20,12 +20,14 @@
 
             <div class="form-group">
                 <label asp-for="ExamId" class="control-label">Exam</label>
-                <select asp-for="ExamId" asp-items="listItems" class="form-control"></select>
+                <select asp-for="ExamId" asp-items="listItems" class="form-control">
+                    <option disabled selected>Select exam</option>
+                </select>
                 <span asp-validation-for="ExamId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Titre" class="control-label"></label>
-                <input asp-for="Titre" class="form-control" />
+                <input asp-for="Titre" class="form-control" /> 
                 <span asp-validation-for="Titre" class="text-danger"></span>
             </div>
             <div class="form-group">

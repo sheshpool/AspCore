@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
 using AspCoreUdemy.Core.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
@@ -27,9 +28,22 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Create()
         {
+            this.ViewBag.ExamList = this._context.Exams.ToList();
+
             this.ViewBag.SubjectList = this._context.Subjects.ToList();
 
             return View();
+        }
+
+        public JsonResult GetSubjectList(int examId)
+        {
+            List<Subject> listSubject = new List<Subject>();
+            listSubject = (from subject in _context.Subjects
+                           where subject.ExamId == examId
+                           select subject).ToList();
+
+
+            return Json(new SelectList(listSubject, "Id", "Titre"));
         }
 
         [HttpPost]

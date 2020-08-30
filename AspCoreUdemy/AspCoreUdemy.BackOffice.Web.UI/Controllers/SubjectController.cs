@@ -54,7 +54,6 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             List<Exam> examList = new List<Exam>(); 
             
             examList = this._context.Exams.ToList();
-            examList.Insert(0, new Exam { Id = 0, Titre = "Select exam"});
 
             this.ViewBag.ExamList = examList;
 

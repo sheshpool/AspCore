@@ -4,11 +4,17 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    List<AspCoreUdemy.Core.Data.Models.Exam> examList = null;
+    examList = this.ViewBag.ExamList;
+    var examListItems = examList.Select(item => new SelectListItem() { Text = item.Titre, Value = item.Id.ToString() }).ToList();
+
     List<AspCoreUdemy.Core.Data.Models.Subject> subjectList = null;
     subjectList = this.ViewBag.SubjectList;
-    var listItems = subjectList.Select(item => new SelectListItem() { Text = item.Titre, Value = item.Id.ToString() }).ToList();
+    var subjectListItems = subjectList.Select(item => new SelectListItem() { Text = item.Titre, Value = item.Id.ToString() }).ToList();
 
 }
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
 
 <h1>Create</h1>
 
@@ -18,13 +24,31 @@
     <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label class="control-label">Exam</label>
+                <select id="ExamId" asp-for="SubjectId" asp-items="examListItems" class="form-control">
+                    <option disabled selected>Select exam</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SubjectId" class="control-label">Subject</label>
+                <select id="SubjectId" asp-for="SubjectId" asp-items="subjectListItems" class="form-control">
+                    <option disabled selected>Select subject</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Titre" class="control-label"></label>
                 <input asp-for="Titre" class="form-control" />
                 <span asp-validation-for="Titre" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <select asp-for="SubjectId" asp-items="listItems" class="form-control"></select>
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" cols="80" rows="10"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -36,6 +60,35 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<!--
+<script type="text/javascript">
+    $(document).ready(
+        function () {
+            var item = "<option value='0'>Select xxx</option>";
+            $('#SubjectId').html(item);
+            $('#ExamId').html(item);
+        }
+    )
+</script>
+-->
+
+<script type="text/javascript">
+    $('#ExamId').change(
+        function () {
+            var url = '@Url.Content("~/")' + "Question/GetSubjectList";
+            var ddlsource = "#ExamId";
+            $.getJSON(url, { ExamId: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $("#SubjectId").empty();
+                $.each(data, function (i, subject) {
+                    items += "<option value='" + subject.value + "'>" + subject.text + "</option>";
+                }
+                );
+                $("#SubjectId").html(items);
+            });
+        });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
