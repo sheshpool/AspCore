@@ -27,6 +27,17 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             return View(query.ToList());
         }
 
+        public JsonResult GetQuestionListBySubject(int subjectId, string viewCaller)
+        {
+            List<Question> listQuestion = new List<Question>();
+            listQuestion = (from question in _context.Questions
+                           where question.SubjectId == subjectId
+                            select question).ToList();
+
+
+            return Json(new SelectList(listQuestion, "Id", "Titre"));
+        }
+
         public IActionResult Create()
         {
             this.ViewBag.ExamList = this._context.Exams.ToList();
@@ -34,17 +45,6 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             this.ViewBag.SubjectList = this._context.Subjects.ToList();
 
             return View();
-        }
-
-        public JsonResult GetSubjectList(int examId)
-        {
-            List<Subject> listSubject = new List<Subject>();
-            listSubject = (from subject in _context.Subjects
-                           where subject.ExamId == examId
-                           select subject).ToList();
-
-
-            return Json(new SelectList(listSubject, "Id", "Titre"));
         }
 
         [HttpPost]

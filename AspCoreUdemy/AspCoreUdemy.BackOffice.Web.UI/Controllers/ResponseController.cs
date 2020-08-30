@@ -21,11 +21,18 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
             var query = from item in this._context.Reponses
                         select item;
+
             return View(query.ToList());
         }
 
         public IActionResult Create()
         {
+            
+
+            this.ViewBag.ExamList = this._context.Exams.ToList();
+
+            this.ViewBag.SubjectList = this._context.Subjects.ToList();
+
             this.ViewBag.QuestionList = this._context.Questions.ToList();
 
             return View();

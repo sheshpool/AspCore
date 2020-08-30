@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 <label class="control-label">Exam</label>
-                <select id="ExamId" asp-for="SubjectId" asp-items="examListItems" class="form-control">
+                <select id="ExamId" asp-items="examListItems" class="form-control">
                     <option disabled selected>Select exam</option>
                 </select>
             </div>
@@ -61,24 +61,12 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-<!--
-<script type="text/javascript">
-    $(document).ready(
-        function () {
-            var item = "<option value='0'>Select xxx</option>";
-            $('#SubjectId').html(item);
-            $('#ExamId').html(item);
-        }
-    )
-</script>
--->
-
 <script type="text/javascript">
     $('#ExamId').change(
         function () {
-            var url = '@Url.Content("~/")' + "Question/GetSubjectList";
+            var url = '@Url.Content("~/")' + "Subject/GetSubjectListByExam";
             var ddlsource = "#ExamId";
-            $.getJSON(url, { ExamId: $(ddlsource).val() }, function (data) {
+            $.getJSON(url, { ExamId: $(ddlsource).val(), ViewCaller: "test"}, function (data) {
                 var items = '';
                 $("#SubjectId").empty();
                 $.each(data, function (i, subject) {
