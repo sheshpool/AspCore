@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
 using AspCoreUdemy.Core.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
@@ -26,6 +28,10 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             return View(query.ToList());
         }
 
+        public string GetExamTitre(int examId)
+        {
+            return this._context.Exams.First(item => item.Id == examId).ToString();
+        }
 
         public JsonResult GetSubjectListByExam(int examId, string viewCaller)
         {
@@ -40,21 +46,21 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Edit(int id)
         {
-            Subject paragraphe = null;
-            paragraphe = this._context.Subjects.First(item => item.Id == id);         
+            Subject subject = null;
+            subject = this._context.Subjects.First(item => item.Id == id);         
              
-            return View(paragraphe);
+            return View(subject);
         }
 
         [HttpPost]
         public IActionResult Edit(Subject subject)
         {
 
-            Subject paragrapheToEdit = null;
-            paragrapheToEdit = this._context.Subjects.First(item => item.Id == subject.Id);
+            Subject subjectToEdit = null;
+            subjectToEdit = this._context.Subjects.First(item => item.Id == subject.Id);
 
-            paragrapheToEdit.Titre = subject.Titre;
-            paragrapheToEdit.Description = subject.Description;
+            subjectToEdit.Titre = subject.Titre;
+            subjectToEdit.Description = subject.Description;
 
             this._context.SaveChanges();
 
