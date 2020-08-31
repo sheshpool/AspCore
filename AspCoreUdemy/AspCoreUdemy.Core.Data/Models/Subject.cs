@@ -15,12 +15,11 @@ namespace AspCoreUdemy.Core.Data.Models
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre ne doit pas être vide.")]
         public string Titre { get; set; }
-
         [Required(AllowEmptyStrings = false, ErrorMessage = "La description doit être renseignée.")]
         public string Description { get; set; }
-
         [Range(1, 1000, ErrorMessage = "Un examen doit être sélectionné")]
         public int ExamId { get; set; }
+        public Exam Exam { get; set; }
         public List<Question> Questions { get; set; }
     }
 }

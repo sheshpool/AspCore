@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "restored": true,
+      "restoreTime": "2020-08-31T21:57:06.2131997Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2020-08-31T21:57:36.7507005Z"
+    }
+  },
+  "parameters": {
+    "mssql2.subscriptionId": {
+      "Type": "subscription",
+      "Value": "7006c7e8-bccb-45f4-b0e8-bca328b19d3f"
+    },
+    "mssql2.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "ADF-TRAINING"
+    },
+    "mssql1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "7006c7e8-bccb-45f4-b0e8-bca328b19d3f"
+    },
+    "mssql1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "ADF-TRAINING"
+    }
+  }
+}

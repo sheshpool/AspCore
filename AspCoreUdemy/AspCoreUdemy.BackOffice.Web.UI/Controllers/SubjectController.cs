@@ -23,23 +23,24 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 
         public IActionResult Index()
         {
-            var query = from item in this._context.Subjects
+            var query = from item in this._context.Subjects.Include(s => s.Exam)
                         select item;
             return View(query.ToList());
         }
 
         public string GetExamTitre(int examId)
         {
-            return this._context.Exams.First(item => item.Id == examId).ToString();
+            
+            return "Test"; //this._context.Exams.First(item => item.Id == examId).Titre;
         }
 
         public JsonResult GetSubjectListByExam(int examId, string viewCaller)
         {
+
             List<Subject> listSubject = new List<Subject>();
             listSubject = (from subject in _context.Subjects
                            where subject.ExamId == examId
                            select subject).ToList();
-
 
             return Json(new SelectList(listSubject, "Id", "Titre"));
         }

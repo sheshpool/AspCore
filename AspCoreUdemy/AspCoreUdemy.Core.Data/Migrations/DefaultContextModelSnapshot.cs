@@ -46,12 +46,14 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
                     b.Property<string>("Titre")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -69,6 +71,7 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsCorrect")
@@ -76,6 +79,10 @@ namespace AspCoreUdemy.Core.Data.Migrations
 
                     b.Property<int>("QuestionId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Titre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -111,7 +118,7 @@ namespace AspCoreUdemy.Core.Data.Migrations
 
             modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.Question", b =>
                 {
-                    b.HasOne("AspCoreUdemy.Core.Data.Models.Subject", null)
+                    b.HasOne("AspCoreUdemy.Core.Data.Models.Subject", "Subject")
                         .WithMany("Questions")
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -120,7 +127,7 @@ namespace AspCoreUdemy.Core.Data.Migrations
 
             modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.Response", b =>
                 {
-                    b.HasOne("AspCoreUdemy.Core.Data.Models.Question", null)
+                    b.HasOne("AspCoreUdemy.Core.Data.Models.Question", "Question")
                         .WithMany("Responses")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -129,7 +136,7 @@ namespace AspCoreUdemy.Core.Data.Migrations
 
             modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.Subject", b =>
                 {
-                    b.HasOne("AspCoreUdemy.Core.Data.Models.Exam", null)
+                    b.HasOne("AspCoreUdemy.Core.Data.Models.Exam", "Exam")
                         .WithMany("Subjects")
                         .HasForeignKey("ExamId")
                         .OnDelete(DeleteBehavior.Cascade)

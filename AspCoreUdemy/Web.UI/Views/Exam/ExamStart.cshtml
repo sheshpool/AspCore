@@ -1,0 +1,26 @@
+﻿@model AspCoreUdemy.Core.Data.Models.Exam
+
+@{
+    ViewData["Title"] = "ExamStart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ExamStart</h1>
+
+<h2>@Model.Titre</h2>
+
+@foreach (var subject in Model.Subjects)
+{
+    @subject.Titre
+    <br />
+    @foreach (var question in subject.Questions)
+    {
+        @question.Titre
+        <br />
+        @foreach (var response in question.Responses)
+        {
+            @response.Titre
+            <br />
+        }
+    }
+}

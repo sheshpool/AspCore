@@ -24,49 +24,64 @@
 
 <h4>Reponse</h4>
 <hr />
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container">
+    <div class="col">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label class="control-label">Exam</label>
-                <select id="ExamId" asp-items="examListItems" class="form-control">
-                    <option disabled selected>Select exam</option>
-                </select>
-            </div>
+                <div class="form-group row">
+                    <label class="control-label col">Exam</label>
+                    <select id="ExamId" asp-items="examListItems" class="form-control col-md-8">
+                        <option disabled selected>Select exam</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label class="control-label">Subject</label>
-                <select id="SubjectId" asp-items="subjectListItems" class="form-control">
-                    <option disabled selected>Select subject</option>
-                </select>
-            </div>
+                <div class="form-group row">
+                    <label class="control-label col">Subject</label>
+                    <select id="SubjectId" asp-items="subjectListItems" class="form-control col-md-8">
+                        <option disabled selected>Select subject</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label class="control-label">Question</label>
-                <select id="QuestionId" asp-for="QuestionId" asp-items="questionListItems" class="form-control">
-                    <option disabled selected>Select question</option>
-                </select>
-            </div>
+                <div class="form-group row">
+                    <label class="control-label col">Question</label>
+                    <select id="QuestionId" asp-for="QuestionId" asp-items="questionListItems" class="form-control col-md-8">
+                        <option disabled selected>Select question</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control" cols="80" rows="10"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="form-group row">
+                    <label asp-for="Titre" class="control-label col"></label>
+                    <input asp-for="Titre" class="form-control col-md-8" />
+                    <span asp-validation-for="Titre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="IsCorrect" class="control-label col"></label>
+                    <input asp-for="IsCorrect" class="form-control col-md-8 float-left" />
+                    <span asp-validation-for="Titre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Description" class="control-label col"></label>
+                    <textarea asp-for="Description" class="form-control col-md-8" cols="80" rows="10"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+    </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
     $(document).ready(function () {
             $('#ExamId').change(
         function () {
@@ -98,8 +113,8 @@
             });
         });
     });
-</script>
+    </script>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

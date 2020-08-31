@@ -1,0 +1,14 @@
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\appsettings.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.deps.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.runtimeconfig.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.runtimeconfig.dev.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\bin\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.pdb
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.csprojAssemblyReference.cache
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.AssemblyInfoInputs.cache
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.AssemblyInfo.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.csproj.CoreCompileInputs.cache
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.pdb
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.Core.Data\obj\Release\netcoreapp3.1\AspCoreUdemy.Core.Data.genruntimeconfig.cache

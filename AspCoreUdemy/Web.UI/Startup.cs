@@ -55,10 +55,12 @@ namespace Web.UI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
+                /*
+                 * endpoints.MapControllerRoute(
                     name: "exams",
                     pattern: "exams",
                     defaults: new { controller = "Exam", action = "Index"});
+                */
 
                 endpoints.MapControllerRoute(
                     name: "default",

@@ -4,16 +4,7 @@
     ViewData["Title"] = "Subjects";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    @using System;
-    @using System.Collections.Generic;
-    @using System.Linq;
-    @using System.Threading.Tasks;
-    @using AspCoreUdemy.Core.Data;
-    @using AspCoreUdemy.Core.Data.Models;
-    @using Microsoft.AspNetCore.Mvc;
-    @using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
-    this._context = context;
+    @using AspCoreUdemy.BackOffice.Web.UI.Controllers;
 
 }
 
@@ -33,35 +24,30 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th>sdfsdfsdfsdfsdfsd</th>
+            <th>Exam</th>
             <th></th>
 
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td id="ToEdit">
-                <script type="text/javascript">
-
-                    $.get('@Url.Content("~/")' + "Subject/GetExamTitre", { ExamId: item.ExamId }, function (data) {
-                    alert(data);
-                });
-
-                </script>
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exam.Titre)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
     </tbody>
-</table>                      
+</table>           

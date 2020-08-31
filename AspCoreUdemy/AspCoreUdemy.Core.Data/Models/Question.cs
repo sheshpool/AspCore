@@ -11,11 +11,12 @@ namespace AspCoreUdemy.Core.Data.Models
     {
         [Key]
         public int Id { get; set; }
-  
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Le titre doit être renseigné.")]
         public string Titre { get; set; }
-
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La description doit être renseignée.")]
         public string Description { get; set; }
         public int SubjectId { get; set; }
+        public Subject Subject { get; set; }
         public  List<Response> Responses { get; set; }
     }
 }

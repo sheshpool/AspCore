@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspCoreUdemy.Core.Data.Models;
 using AspCoreUdemy.Core.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Razor.Language;
 
 namespace Web.UI.Controllers
 {
@@ -32,15 +34,20 @@ namespace Web.UI.Controllers
                 this._context.Exams.Add(exam);
                 this._context.SaveChanges();
 
-                result = RedirectToAction("ExamBegin");
+                result = RedirectToAction("ExamStart");
             }
             return result;
         }
 
-        IActionResult ExamBegin()
+        public IActionResult ExamStart(int examId)
         {
-
-            return View();
+            var query = from item in this._context.Exams.Include(e => e.Subjects)
+                                                            .ThenInclude(s => s.Questions)
+                                                                .ThenInclude(q => q.Responses)
+                        where item.Id == examId
+                        select item;
+    
+            return View(query.ToList().First());
         }
         public IActionResult Index()
         {

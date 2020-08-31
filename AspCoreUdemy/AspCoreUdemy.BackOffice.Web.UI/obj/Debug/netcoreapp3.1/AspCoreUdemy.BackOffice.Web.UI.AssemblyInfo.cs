@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("12cbc245-7eb3-4b0f-81a4-51b9a6f2e8df")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspCoreUdemy.BackOffice.Web.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

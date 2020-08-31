@@ -11,12 +11,10 @@
 </div>
 <h2 class="text-center">Vos dernières aventures</h2>
 <div class="row">
-    @foreach (var aventure in Model)
+    @foreach (var exam in Model)
     {
-        <a href="#" class="card border m-1 text-center" style="width: 7em;">
             <div class="card-body">
-               @aventure.Titre
+                @Html.ActionLink(@exam.Titre, "ExamStart", "Exam", new { ExamId = exam.Id })
             </div>
-        </a>
     }
 </div>

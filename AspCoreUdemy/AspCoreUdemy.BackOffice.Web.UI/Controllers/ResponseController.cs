@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
 using AspCoreUdemy.Core.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
@@ -19,7 +20,9 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
         public IActionResult Index()
         {
 
-            var query = from item in this._context.Reponses
+            var query = from item in this._context.Reponses.Include(r => r.Question)
+                                                                .ThenInclude(q => q.Subject)
+                                                                    .ThenInclude(s => s.Exam)
                         select item;
 
             return View(query.ToList());
