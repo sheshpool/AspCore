@@ -11,13 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{CEB0066D-E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspCoreUdemy.BackOffice.Web.UI", "AspCoreUdemy.BackOffice.Web.UI\AspCoreUdemy.BackOffice.Web.UI.csproj", "{19E597E9-D112-4DE6-822C-1B0C8114529F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validateurs", "Validateurs\Validateurs.csproj", "{FAB30B1B-8D3E-47F3-ADF5-B16849A418A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validateurs", "Validateurs\Validateurs.csproj", "{FAB30B1B-8D3E-47F3-ADF5-B16849A418A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleProjects", "SampleProjects", "{A9E20CEA-E2C7-4063-BA89-4A8BACF35FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionTest", "SessionTest\SessionTest.csproj", "{CA41F64B-BE30-4918-A0D3-4914E57722DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SessionTest", "SessionTest\SessionTest.csproj", "{CA41F64B-BE30-4918-A0D3-4914E57722DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspProject", "AspProject\AspProject.csproj", "{64644E64-FD41-4702-9C88-D023BBFA99B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspProject", "AspProject\AspProject.csproj", "{64644E64-FD41-4702-9C88-D023BBFA99B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeIdentity", "OfficeIdentity\OfficeIdentity.csproj", "{61D104E2-AA33-4A3B-A147-9109DEB09576}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{64644E64-FD41-4702-9C88-D023BBFA99B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64644E64-FD41-4702-9C88-D023BBFA99B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64644E64-FD41-4702-9C88-D023BBFA99B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61D104E2-AA33-4A3B-A147-9109DEB09576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61D104E2-AA33-4A3B-A147-9109DEB09576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61D104E2-AA33-4A3B-A147-9109DEB09576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61D104E2-AA33-4A3B-A147-9109DEB09576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
