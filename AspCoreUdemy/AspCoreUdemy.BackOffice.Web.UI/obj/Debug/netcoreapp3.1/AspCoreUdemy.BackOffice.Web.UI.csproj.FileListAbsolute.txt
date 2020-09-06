@@ -293,8 +293,6 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI20200831223542 - Web Deploy\mssql1.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.csproj.CoreCompileInputs.cache
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cache
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI20200831223542 - Web Deploy\mssql2.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.AspCoreUdemyBackOfficeWebUI - Web Deploy.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI - Web Deploy\mssql1.arm.json
@@ -304,3 +302,24 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\kappback - Web Deploy\mssql1.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\kappback - Web Deploy\mssql2.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\kappback - Web Deploy\profile.arm.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.StaticWebAssets.xml
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.csproj.CoreCompileInputs.cache
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cache
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
