@@ -7,6 +7,10 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "DefaultContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "AspCoreUdemyBackOfficeWebUIDbContextConnection"
     }
   }
 }

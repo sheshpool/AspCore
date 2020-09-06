@@ -1,4 +1,5 @@
 ﻿using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace AspCoreUdemy.Core.Data
 {
-    public class DefaultContext : DbContext
+    public class DefaultContext : IdentityDbContext<ApplicationUser>
     {
         public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
         {
@@ -15,6 +16,14 @@ namespace AspCoreUdemy.Core.Data
 
         protected DefaultContext()
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Customize the ASP.NET Identity model and override the defaults if needed.
+            // For example, you can rename the ASP.NET Identity table names and more.
+            // Add your customizations after calling base.OnModelCreating(builder);
         }
 
         public DbSet<Exam> Exams { get; set; }
