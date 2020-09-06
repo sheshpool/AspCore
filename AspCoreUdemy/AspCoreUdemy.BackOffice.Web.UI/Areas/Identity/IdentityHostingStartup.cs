@@ -1,12 +1,12 @@
 ﻿using System;
-using AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Data;
-using AspCoreUdemy.BackOffice.Web.UI.Data;
+using AspCoreUdemy.Core.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AspCoreUdemy.Core.Data.Models;
 
 [assembly: HostingStartup(typeof(AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.IdentityHostingStartup))]
 namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity
@@ -16,12 +16,12 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<AspCoreUdemyBackOfficeWebUIDbContext>(options =>
+                services.AddDbContext<DefaultContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("AspCoreUdemyBackOfficeWebUIDbContextConnection")));
+                        context.Configuration.GetConnectionString("DefaultContext")));
 
                 services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<AspCoreUdemyBackOfficeWebUIDbContext>();
+                    .AddEntityFrameworkStores<DefaultContext>();
             });
         }
     }

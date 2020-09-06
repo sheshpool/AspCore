@@ -269,3 +269,8 @@ C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Exam\Create.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Exam\Index.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Exam\ExamStart.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\git\AspCore\AspCoreUdemy\Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

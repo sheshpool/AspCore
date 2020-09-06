@@ -109,4 +109,3 @@ C:\git\AspCore\AspCoreUdemy\Validateurs\obj\Debug\netcoreapp3.1\Validateurs.pdb
 C:\git\AspCore\AspCoreUdemy\Validateurs\obj\Debug\netcoreapp3.1\Validateurs.genruntimeconfig.cache
 C:\git\AspCore\AspCoreUdemy\Validateurs\obj\Debug\netcoreapp3.1\Razor\Views\Jedi\Create.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\Validateurs\obj\Debug\netcoreapp3.1\Razor\Views\Jedi\Index.cshtml.g.cs
-C:\git\AspCore\AspCoreUdemy\Validateurs\obj\Debug\netcoreapp3.1\Validateurs.csprojAssemblyReference.cache

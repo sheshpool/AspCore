@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using AspCoreUdemy.Core.Data.Models;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Pages.Account
 {

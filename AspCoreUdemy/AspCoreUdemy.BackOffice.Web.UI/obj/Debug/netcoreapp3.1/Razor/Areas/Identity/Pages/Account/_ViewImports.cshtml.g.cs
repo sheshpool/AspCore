@@ -35,7 +35,7 @@ using AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Pages;
 #nullable disable
 #nullable restore
 #line 5 "C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\Areas\Identity\Pages\_ViewImports.cshtml"
-using AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Data;
+using AspCoreUdemy.Core.Data.Models;
 
 #line default
 #line hidden
@@ -48,7 +48,7 @@ using AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Pages.Account;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d998779e72d9317ddc7eeb5348724351fad1f169", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e42a1c5bccdafccc9df490bb936d8c374dda716", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"76ae5e21976cb90b5a6880932a0f4df28b511a47", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account__ViewImports : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

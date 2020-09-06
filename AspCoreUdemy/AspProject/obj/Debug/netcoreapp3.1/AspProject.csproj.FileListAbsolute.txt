@@ -47,4 +47,3 @@ C:\git\AspCore\AspCoreUdemy\AspProject\obj\Debug\netcoreapp3.1\staticwebassets\A
 C:\git\AspCore\AspCoreUdemy\AspProject\obj\Debug\netcoreapp3.1\AspProject.dll
 C:\git\AspCore\AspCoreUdemy\AspProject\obj\Debug\netcoreapp3.1\AspProject.pdb
 C:\git\AspCore\AspCoreUdemy\AspProject\obj\Debug\netcoreapp3.1\AspProject.genruntimeconfig.cache
-C:\git\AspCore\AspCoreUdemy\AspProject\obj\Debug\netcoreapp3.1\AspProject.csprojAssemblyReference.cache
