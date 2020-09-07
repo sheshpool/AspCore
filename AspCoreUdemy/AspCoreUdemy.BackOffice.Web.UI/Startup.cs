@@ -26,6 +26,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
 
             string connectionString = this.Configuration.GetConnectionString("DefaultContext");
             services.AddDbContext<DefaultContext>(options => options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
@@ -49,6 +50,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -63,6 +65,8 @@ namespace AspCoreUdemy.BackOffice.Web.UI
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages();
             });
         }
     }

@@ -291,12 +291,8 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI20200831223542 - Web Deploy\profile.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.AspCoreUdemyBackOfficeWebUI20200831223542 - Web Deploy.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI20200831223542 - Web Deploy\mssql1.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI20200831223542 - Web Deploy\mssql2.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.AspCoreUdemyBackOfficeWebUI - Web Deploy.json
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI - Web Deploy\mssql1.arm.json
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI - Web Deploy\mssql2.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\AspCoreUdemyBackOfficeWebUI - Web Deploy\profile.arm.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.kappback - Web Deploy.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\kappback - Web Deploy\mssql1.arm.json
@@ -323,3 +319,4 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_AuthLayout.cshtml.g.cs

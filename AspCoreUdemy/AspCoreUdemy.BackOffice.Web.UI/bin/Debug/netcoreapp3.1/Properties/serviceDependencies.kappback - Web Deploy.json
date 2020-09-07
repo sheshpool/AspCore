@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "mssql2": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/aspcoreudemy/databases/AspCoreUdemy.BackOffice.Web.UI_db",
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/aspcoreudemydb/databases/AspCoreUdemy.BackOffice.Web.UI_db",
       "type": "mssql.azure",
-      "connectionId": "aspcoreudemydb",
+      "connectionId": "AspCoreUdemyBackOfficeWebUIDbContextConnection",
       "secretStore": "AzureAppSettings"
     },
-    "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/aspcoreudemy/databases/AspCoreUdemy.BackOffice.Web.UI_db",
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/aspcoreudemydb/databases/AspCoreUdemy.BackOffice.Web.UI_db",
       "type": "mssql.azure",
       "connectionId": "DefaultContext",
       "secretStore": "AzureAppSettings"

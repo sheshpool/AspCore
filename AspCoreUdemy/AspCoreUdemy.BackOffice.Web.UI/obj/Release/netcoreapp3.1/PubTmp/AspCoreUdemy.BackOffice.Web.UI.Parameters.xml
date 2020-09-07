@@ -3,4 +3,7 @@
   <parameter name="IIS Web Application Name" description="" value="kappback" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\git\\AspCore\\AspCoreUdemy\\AspCoreUdemy\.BackOffice\.Web\.UI\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
   </parameter>
+  <parameter name="AspCoreUdemy.Core.Data.DefaultContext" description="" value="Data Source=tcp:aspcoreudemydb.database.windows.net,1433;Initial Catalog=AspCoreUdemy.BackOffice.Web.UI_db;User Id=hkh@aspcoreudemydb;Password=Pass@word1$!" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\git\\AspCore\\AspCoreUdemy\\AspCoreUdemy\.BackOffice\.Web\.UI\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\AspCoreUdemy\.Core\.Data\.DefaultContext\.sql$" />
+  </parameter>
 </parameters>

@@ -6,12 +6,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
 using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
+    [Authorize]
     public class SubjectController : Controller
     {
         private readonly DefaultContext _context = null;

@@ -20,7 +20,13 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DefaultContext")));
 
-                services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<ApplicationUser>(options =>
+                {
+                    options.SignIn.RequireConfirmedAccount = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireLowercase = false;
+                    }
+                )
                     .AddEntityFrameworkStores<DefaultContext>();
             });
         }

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
 using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
+    [Authorize]
     public class ExamController : Controller
     {
         private readonly DefaultContext _context = null;
