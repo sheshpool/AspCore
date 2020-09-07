@@ -30,6 +30,8 @@ namespace AspCoreUdemy.Core.Data
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Reponses { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<ApplicationRole> ApplicationRolme { get; set; }
 
     }
 }

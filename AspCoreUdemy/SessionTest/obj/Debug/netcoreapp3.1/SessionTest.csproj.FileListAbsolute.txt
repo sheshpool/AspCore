@@ -34,4 +34,3 @@ C:\git\AspCore\AspCoreUdemy\SessionTest\obj\Debug\netcoreapp3.1\SessionTest.dll
 C:\git\AspCore\AspCoreUdemy\SessionTest\obj\Debug\netcoreapp3.1\SessionTest.pdb
 C:\git\AspCore\AspCoreUdemy\SessionTest\obj\Debug\netcoreapp3.1\SessionTest.genruntimeconfig.cache
 C:\git\AspCore\AspCoreUdemy\SessionTest\obj\Debug\netcoreapp3.1\SessionTest.csproj.CopyComplete
-C:\git\AspCore\AspCoreUdemy\SessionTest\obj\Debug\netcoreapp3.1\SessionTest.csprojAssemblyReference.cache

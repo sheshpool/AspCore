@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace AspCoreUdemy.BackOffice.Web.UI
 {

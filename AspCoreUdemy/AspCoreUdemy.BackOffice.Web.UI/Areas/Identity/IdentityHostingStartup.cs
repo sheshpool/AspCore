@@ -27,7 +27,11 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity
                     options.Password.RequireLowercase = false;
                     }
                 )
-                    .AddEntityFrameworkStores<DefaultContext>();
+                //.AddRoles<ApplicationRole>()
+                .AddEntityFrameworkStores<DefaultContext>();
+
+                //services.AddDefaultIdentity<ApplicationUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<DefaultContext>();
+                //services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DefaultContext>();
             });
         }
     }
