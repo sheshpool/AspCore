@@ -10,7 +10,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly RoleManager<ApplicationRole> _roleManager;
+        private RoleManager<ApplicationRole> _roleManager;
 
         public AdminController(RoleManager<ApplicationRole> roleManager)
         {
