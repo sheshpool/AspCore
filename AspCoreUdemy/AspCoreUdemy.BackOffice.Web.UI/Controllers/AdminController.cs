@@ -10,14 +10,14 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
 
-        public AdminController(RoleManager<IdentityRole> roleManager)
+        public AdminController(RoleManager<ApplicationRole> roleManager)
         {
             this._roleManager = roleManager;
         }
 
-        public IActionResult RoleIndex()
+        public IActionResult Index()
         {
             return View();
         }
@@ -32,7 +32,7 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             var roleExist = await _roleManager.RoleExistsAsync(role.RoleName);
             if(!roleExist)
             {
-                var result = await _roleManager.CreateAsync(new IdentityRole(role.RoleName));
+                var result = await _roleManager.CreateAsync(role);
             }
             return View();
         }

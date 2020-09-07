@@ -1,4 +1,5 @@
 ﻿using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace AspCoreUdemy.Core.Data
 {
-    public class DefaultContext : IdentityDbContext<ApplicationUser>
+    public class DefaultContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
         {
@@ -31,7 +32,7 @@ namespace AspCoreUdemy.Core.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Reponses { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
-        public DbSet<ApplicationRole> ApplicationRolme { get; set; }
+        public DbSet<ApplicationRole> ApplicationRole { get; set; }
 
     }
 }
