@@ -2,7 +2,7 @@
 
 namespace AspCoreUdemy.Core.Data.Migrations
 {
-    public partial class test : Migration
+    public partial class _20200908_12h42 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

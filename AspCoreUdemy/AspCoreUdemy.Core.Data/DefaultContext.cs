@@ -22,6 +22,11 @@ namespace AspCoreUdemy.Core.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationRole>()
+            .Property(b => b.CreationDateTime)
+            .HasDefaultValueSql("getdate()");
+
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
@@ -31,8 +36,8 @@ namespace AspCoreUdemy.Core.Data
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Reponses { get; set; }
-        public DbSet<ApplicationUser> ApplicationUser { get; set; }
-        public DbSet<ApplicationRole> ApplicationRole { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<ApplicationRole> ApplicationRoles { get; set; }
 
     }
 }

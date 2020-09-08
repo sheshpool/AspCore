@@ -3,10 +3,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AspCoreUdemy.Core.Data.Migrations
 {
-    public partial class _20200906_16h20 : Migration
+    public partial class _20200908_12h36 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "app");
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -14,7 +17,9 @@ namespace AspCoreUdemy.Core.Data.Migrations
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(nullable: true)
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    RoleName = table.Column<string>(type: "varchar(100)", nullable: true),
+                    CreationDateTime = table.Column<DateTime>(type: "DateTime2", nullable: false, defaultValueSql: "getdate()")
                 },
                 constraints: table =>
                 {
@@ -46,6 +51,21 @@ namespace AspCoreUdemy.Core.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Exam",
+                schema: "app",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titre = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Exam", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +174,76 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Subject",
+                schema: "app",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titre = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    ExamId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subject", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Subject_Exam_ExamId",
+                        column: x => x.ExamId,
+                        principalSchema: "app",
+                        principalTable: "Exam",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Question",
+                schema: "app",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titre = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    SubjectId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Question", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Question_Subject_SubjectId",
+                        column: x => x.SubjectId,
+                        principalSchema: "app",
+                        principalTable: "Subject",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Response",
+                schema: "app",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titre = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    IsCorrect = table.Column<bool>(nullable: false),
+                    QuestionId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Response", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Response_Question_QuestionId",
+                        column: x => x.QuestionId,
+                        principalSchema: "app",
+                        principalTable: "Question",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -192,6 +282,24 @@ namespace AspCoreUdemy.Core.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Question_SubjectId",
+                schema: "app",
+                table: "Question",
+                column: "SubjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Response_QuestionId",
+                schema: "app",
+                table: "Response",
+                column: "QuestionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Subject_ExamId",
+                schema: "app",
+                table: "Subject",
+                column: "ExamId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -212,10 +320,26 @@ namespace AspCoreUdemy.Core.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Response",
+                schema: "app");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Question",
+                schema: "app");
+
+            migrationBuilder.DropTable(
+                name: "Subject",
+                schema: "app");
+
+            migrationBuilder.DropTable(
+                name: "Exam",
+                schema: "app");
         }
     }
 }

@@ -30,10 +30,10 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             bool IsAdmin = currentUser.IsInRole("Admin");
             var id = _userManager.GetUserId(currentUser);
 
-
             var query = from item in this._context.Exams
                         select item;
             return View(query.ToList());
+
         }
 
         public IActionResult Create()
@@ -51,7 +51,6 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
             }
 
             return RedirectToAction("Index");
-
         }
 
         public IActionResult Edit(int id)

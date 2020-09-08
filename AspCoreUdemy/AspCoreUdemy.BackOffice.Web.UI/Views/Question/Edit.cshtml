@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     List<AspCoreUdemy.Core.Data.Models.Subject> subjectList = null;
-    subjectList = this.ViewBag.ParagraphesList;
+    subjectList = this.ViewBag.SubjectList;
     var listItems = subjectList.Select(item => new SelectListItem() { Text = item.Titre, Value = item.Id.ToString() }).ToList();
 }
 

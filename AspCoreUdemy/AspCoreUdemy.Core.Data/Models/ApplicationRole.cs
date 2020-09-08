@@ -8,14 +8,13 @@ using System.Text;
 namespace AspCoreUdemy.Core.Data.Models
 {
     public class ApplicationRole: IdentityRole
-    {
-        public ApplicationRole(string roleName) : base(roleName)
-        {
-            this.RoleName = roleName;
-        }
-
+    { 
         [PersonalData]
         [Column(TypeName = "varchar(100)")]
         public string RoleName { get; set; }
+
+        [PersonalData]
+        [Column(TypeName = "DateTime2")]
+        public DateTime CreationDateTime { get; set; }
     }
 }
