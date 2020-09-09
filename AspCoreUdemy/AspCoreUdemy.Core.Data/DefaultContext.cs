@@ -12,7 +12,6 @@ namespace AspCoreUdemy.Core.Data
 {
     //public class DefaultContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, IdentityUserLogin, ApplicationUserRole, IdentityUserClaim>
     public class DefaultContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
-
     {
         public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
         {

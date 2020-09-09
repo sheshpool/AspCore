@@ -47,3 +47,4 @@ C:\git\AspCore\AspCoreUdemy\OfficeIdentity\obj\Debug\netcoreapp3.1\staticwebasse
 C:\git\AspCore\AspCoreUdemy\OfficeIdentity\obj\Debug\netcoreapp3.1\OfficeIdentity.dll
 C:\git\AspCore\AspCoreUdemy\OfficeIdentity\obj\Debug\netcoreapp3.1\OfficeIdentity.pdb
 C:\git\AspCore\AspCoreUdemy\OfficeIdentity\obj\Debug\netcoreapp3.1\OfficeIdentity.genruntimeconfig.cache
+C:\git\AspCore\AspCoreUdemy\OfficeIdentity\obj\Debug\netcoreapp3.1\OfficeIdentity.csprojAssemblyReference.cache
