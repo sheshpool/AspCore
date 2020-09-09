@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SessionTest", "SessionTest\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspProject", "AspProject\AspProject.csproj", "{64644E64-FD41-4702-9C88-D023BBFA99B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeIdentity", "OfficeIdentity\OfficeIdentity.csproj", "{61D104E2-AA33-4A3B-A147-9109DEB09576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeIdentity", "OfficeIdentity\OfficeIdentity.csproj", "{61D104E2-AA33-4A3B-A147-9109DEB09576}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -66,6 +66,9 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreationDateTime")
+                        .HasColumnType("DateTime2");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -301,11 +304,15 @@ namespace AspCoreUdemy.Core.Data.Migrations
                     b.Property<string>("RoleId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("UserId", "RoleId");
 
-                    b.HasIndex("RoleId");
-
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUserRole<string>");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -325,6 +332,15 @@ namespace AspCoreUdemy.Core.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.ApplicationUserRole", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUserRole<string>");
+
+                    b.HasIndex("RoleId");
+
+                    b.HasDiscriminator().HasValue("ApplicationUserRole");
                 });
 
             modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.Question", b =>
@@ -381,14 +397,8 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("AspCoreUdemy.Core.Data.Models.ApplicationRole", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("AspCoreUdemy.Core.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -396,10 +406,16 @@ namespace AspCoreUdemy.Core.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("AspCoreUdemy.Core.Data.Models.ApplicationUserRole", b =>
                 {
-                    b.HasOne("AspCoreUdemy.Core.Data.Models.ApplicationUser", null)
-                        .WithMany()
+                    b.HasOne("AspCoreUdemy.Core.Data.Models.ApplicationRole", "ApplicationRole")
+                        .WithMany("ApplicationUserRoles")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AspCoreUdemy.Core.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("ApplicationUserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

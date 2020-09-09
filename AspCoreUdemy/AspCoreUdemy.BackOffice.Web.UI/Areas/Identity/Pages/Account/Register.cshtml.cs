@@ -22,17 +22,20 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            RoleManager<ApplicationRole> roleManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _logger = logger;
             _emailSender = emailSender;
         }
@@ -84,10 +87,25 @@ namespace AspCoreUdemy.BackOffice.Web.UI.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName};
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                ApplicationUser user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName};
+                IdentityResult result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    string defaultRole = "Public";
+                    var newRole = new ApplicationRole() { RoleName = defaultRole, Name = defaultRole, NormalizedName = defaultRole, CreationDateTime = DateTime.Now };
+
+                    var roleExist = await _roleManager.RoleExistsAsync(defaultRole);
+
+                    if (!roleExist)
+                    {
+                        var resultRole = await _roleManager.CreateAsync(newRole);
+                    }
+
+                    if (result.Succeeded)
+                    {
+                        var result1 = await _userManager.AddToRoleAsync(user, defaultRole);
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

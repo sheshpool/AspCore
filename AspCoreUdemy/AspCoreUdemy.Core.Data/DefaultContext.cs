@@ -1,4 +1,5 @@
 ﻿using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,9 @@ using System.Text;
 
 namespace AspCoreUdemy.Core.Data
 {
+    //public class DefaultContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, IdentityUserLogin, ApplicationUserRole, IdentityUserClaim>
     public class DefaultContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+
     {
         public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
         {
@@ -19,17 +22,30 @@ namespace AspCoreUdemy.Core.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.Entity<ApplicationRole>()
-            .Property(b => b.CreationDateTime)
-            .HasDefaultValueSql("getdate()");
+            modelBuilder.Entity<ApplicationRole>()
+                .Property(b => b.CreationDateTime)
+                .HasDefaultValueSql("getdate()");
 
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+            modelBuilder.Entity<ApplicationUser>(b =>
+            {
+                b.HasMany(e => e.ApplicationUserRoles)
+                    .WithOne(e => e.ApplicationUser)
+                    .HasForeignKey(ur => ur.UserId)
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<ApplicationRole>(b =>
+            { 
+                b.HasMany(e => e.ApplicationUserRoles)
+                    .WithOne(e => e.ApplicationRole)
+                    .HasForeignKey(ur => ur.RoleId)
+                    .IsRequired();
+            });
+
         }
 
         public DbSet<Exam> Exams { get; set; }
@@ -38,6 +54,6 @@ namespace AspCoreUdemy.Core.Data
         public DbSet<Response> Reponses { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<ApplicationRole> ApplicationRoles { get; set; }
-
+        public DbSet<ApplicationUserRole> ApplicationUserRoles { get; set; }
     }
 }

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AspCoreUdemy.Core.Data;
 using AspCoreUdemy.Core.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
+    [Authorize]
     public class ApplicationRoleController : Controller
     {
         private readonly DefaultContext _context = null;

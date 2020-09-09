@@ -309,7 +309,6 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.csproj.CoreCompileInputs.cache
-C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cs
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cache
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
@@ -355,3 +354,5 @@ C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationRole\Create.cshtml.g.cs
 C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationRole\Index.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationUser\Index.cshtml.g.cs
+C:\git\AspCore\AspCoreUdemy\AspCoreUdemy.BackOffice.Web.UI\obj\Debug\netcoreapp3.1\AspCoreUdemy.BackOffice.Web.UI.MvcApplicationPartsAssemblyInfo.cs
