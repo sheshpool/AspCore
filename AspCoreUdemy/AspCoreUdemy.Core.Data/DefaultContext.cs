@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Text;
-
+ 
 namespace AspCoreUdemy.Core.Data
 {
     //public class DefaultContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, IdentityUserLogin, ApplicationUserRole, IdentityUserClaim>
