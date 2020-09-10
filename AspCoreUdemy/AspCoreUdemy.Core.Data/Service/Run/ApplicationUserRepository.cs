@@ -12,7 +12,7 @@ namespace AspCoreUdemy.Core.Data.Service.Run
     public class ApplicationUserRepository : IApplicationUserRepository
     {
         private readonly DefaultContext _context = null;
-        private readonly RoleManager<ApplicationRole> _roleManager;
+        //private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
 
         public ApplicationUserRepository(DefaultContext context, RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager)
@@ -43,6 +43,12 @@ namespace AspCoreUdemy.Core.Data.Service.Run
         {
             ApplicationUser applicationUser = await this._userManager.FindByIdAsync(id);
             return applicationUser;
+        }
+
+        public async Task<IList<string>> GetRolesByUser(ApplicationUser applicationUser)
+        {
+            IList<string> applicationRolesList  = await this._userManager.GetRolesAsync(applicationUser);
+            return applicationRolesList;
         }
 
         public void Save()

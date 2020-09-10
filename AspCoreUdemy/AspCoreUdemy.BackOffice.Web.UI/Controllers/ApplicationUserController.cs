@@ -14,6 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using AspCoreUdemy.Core.Data.Infrastructure;
+using AspCoreUdemy.BackOffice.Web.UI.Models;
 
 namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
 {
@@ -36,9 +37,14 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
         }
         public IActionResult Index()
         {
-
+            List<UserRoleViewModel> userRoleViewModelList = new List<UserRoleViewModel>();
             var applicationUsers = this._applicationUserRepository.GetAll();
-            return View(applicationUsers);
+            foreach(ApplicationUser user in applicationUsers)
+            {
+                var roles = this._applicationUserRepository.GetRolesByUser(user);
+                userRoleViewModelList.Add(new UserRoleViewModel { ApplicationUser = user, Roles = (IList<string>) roles });
+            }
+            return View(userRoleViewModelList);
         }
 
         public async Task<IActionResult> Details(string id)

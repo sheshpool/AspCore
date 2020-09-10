@@ -14,6 +14,7 @@ namespace AspCoreUdemy.Core.Data.Infrastructure
         Task Edit(ApplicationUser applicationUser);
         Task Delete(ApplicationUser applicationUser);
         Task AffectRole(ApplicationUser applicationUser, ApplicationRole applicationRole);
+        Task<IList<String>> GetRolesByUser(ApplicationUser applicationUser);
         void Save();
     }
 }

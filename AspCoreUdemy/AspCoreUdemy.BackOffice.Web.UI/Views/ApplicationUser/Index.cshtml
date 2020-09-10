@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AspCoreUdemy.Core.Data.Models.ApplicationUser>
+﻿@model List<UserRoleViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -20,13 +20,16 @@
     <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                FirstName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                LastName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Email
+            </th>
+            <th>
+                Roles
             </th>
             <th></th>
         </tr>
@@ -36,27 +39,30 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles.Aggregate((i, j) => i + ", " + j))
             </td>
             <td class="float-right btn-group">
                 <button type="button" class="btn btn-sm btn-primary-outline">
-                    <a href='@Url.Action("Details", "ApplicationUser", new { id = item.Id })'>
+                    <a href='@Url.Action("Details", "ApplicationUser", new { id = item.ApplicationUser.Id })'>
                         <i class="fas fa-eye" style="font-size: 20px; color: seagreen;"></i>
                     </a>
                 </button>
                 <button type="button" class="btn btn-sm btn-primary-outline">
-                    <a href='@Url.Action("Edit", "ApplicationUser", new { id = item.Id.ToString() })'>
+                    <a href='@Url.Action("Edit", "ApplicationUser", new { id = item.ApplicationUser.Id.ToString() })'>
                         <i class="far fa-edit" style="font-size: 20px; color: steelblue;"></i>
                     </a>
                 </button>
                 <button type="button" class="btn btn-sm btn-primary-outline">
-                    <a href='@Url.Action("Delete", "ApplicationUser", new { id = item.Id })'>
+                    <a href='@Url.Action("Delete", "ApplicationUser", new { id = item.ApplicationUser.Id })'>
                         <i class="far fa-trash-alt" style="font-size: 20px; color: orangered;"></i>
                     </a>
                 </button>

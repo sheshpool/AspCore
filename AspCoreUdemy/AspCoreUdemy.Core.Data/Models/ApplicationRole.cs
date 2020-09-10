@@ -23,9 +23,5 @@ namespace AspCoreUdemy.Core.Data.Models
 
         public virtual ICollection<ApplicationUserRole> ApplicationUserRoles { get; set; }
 
-        public static implicit operator ApplicationRole(ApplicationUser v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

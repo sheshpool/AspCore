@@ -43,5 +43,10 @@ namespace AspCoreUdemy.Core.Data.Service
         {
             throw new NotImplementedException();
         }
+
+        public Task<IList<string>> GetRolesByUser(ApplicationUser applicationUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
