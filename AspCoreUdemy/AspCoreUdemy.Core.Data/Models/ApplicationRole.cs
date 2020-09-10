@@ -22,5 +22,10 @@ namespace AspCoreUdemy.Core.Data.Models
         public DateTime CreationDateTime { get; set; }
 
         public virtual ICollection<ApplicationUserRole> ApplicationUserRoles { get; set; }
+
+        public static implicit operator ApplicationRole(ApplicationUser v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
