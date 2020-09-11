@@ -12,14 +12,22 @@ namespace AspCoreUdemy.Core.Data.Service.Run
     public class ApplicationUserRepository : IApplicationUserRepository
     {
         private readonly DefaultContext _context = null;
-        //private readonly RoleManager<ApplicationRole> _roleManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IApplicationRoleRepository _applicationRoleRepository;
 
-        public ApplicationUserRepository(DefaultContext context, RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager)
+        public ApplicationUserRepository
+            (
+                DefaultContext context, 
+                RoleManager<ApplicationRole> roleManager, 
+                UserManager<ApplicationUser> userManager,
+                IApplicationRoleRepository applicationRoleRepository
+            )
         {
             this._context = context;
-            //this._roleManager = roleManager;
+            this._roleManager = roleManager;
             this._userManager = userManager;
+            this._applicationRoleRepository = applicationRoleRepository;
         }
 
         public async Task Delete(ApplicationUser applicationUser)
@@ -45,9 +53,9 @@ namespace AspCoreUdemy.Core.Data.Service.Run
             return applicationUser;
         }
 
-        public async Task<IList<string>> GetRolesByUser(ApplicationUser applicationUser)
+        public async Task<List<string>> GetRolesByUser(ApplicationUser applicationUser)
         {
-            IList<string> applicationRolesList  = await this._userManager.GetRolesAsync(applicationUser);
+            List<string> applicationRolesList  = (List<string>)await this._userManager.GetRolesAsync(applicationUser);
             return applicationRolesList;
         }
 
@@ -56,9 +64,27 @@ namespace AspCoreUdemy.Core.Data.Service.Run
             throw new NotImplementedException();
         }
 
-        public Task AffectRole(ApplicationUser applicationUser, ApplicationRole applicationRole)
+        public async Task AffectRoles(ApplicationUser applicationUser, List<string> roles)
         {
-            throw new NotImplementedException();
+            List<ApplicationRole> applicationRoles = this._applicationRoleRepository.GetAll();
+
+            foreach (ApplicationRole applicationRole in applicationRoles)
+            {
+                if(roles.Contains(applicationRole.RoleName))
+                {
+                    if (!await this._userManager.IsInRoleAsync(applicationUser, applicationRole.Name))
+                    {
+                        var result = await this._userManager.AddToRoleAsync(applicationUser, applicationRole.Name); 
+                    }
+                }
+                else
+                {
+                    if (await this._userManager.IsInRoleAsync(applicationUser, applicationRole.Name))
+                    {
+                        var result = await this._userManager.RemoveFromRoleAsync(applicationUser, applicationRole.Name);
+                    }
+                }                
+            }
         }
 
         public Task Insert(ApplicationUser applicationUser)
@@ -68,13 +94,17 @@ namespace AspCoreUdemy.Core.Data.Service.Run
 
         public async Task Edit(ApplicationUser applicationUser)
         {
-            ApplicationUser user = await this._userManager.FindByIdAsync(applicationUser.Id);
 
-            user.FirstName = applicationUser.UserName;
-            user.LastName = applicationUser.LastName;
-            user.Email = applicationUser.Email;
+            // Get the existing student from the db
+            var _applicationUser = (ApplicationUser) await this._userManager.FindByIdAsync(applicationUser.Id);
 
-            await _userManager.UpdateAsync(user);
+            // Update it with the values from the view model
+            _applicationUser.FirstName = applicationUser.FirstName;
+            _applicationUser.LastName = applicationUser.LastName;
+            _applicationUser.Email = applicationUser.Email;
+
+            // Apply the changes if any to the db
+            await _userManager.UpdateAsync(_applicationUser);
         }
     }
 }

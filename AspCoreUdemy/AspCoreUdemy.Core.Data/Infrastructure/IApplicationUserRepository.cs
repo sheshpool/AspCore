@@ -13,8 +13,8 @@ namespace AspCoreUdemy.Core.Data.Infrastructure
         Task Insert(ApplicationUser applicationUser);
         Task Edit(ApplicationUser applicationUser);
         Task Delete(ApplicationUser applicationUser);
-        Task AffectRole(ApplicationUser applicationUser, ApplicationRole applicationRole);
-        Task<IList<String>> GetRolesByUser(ApplicationUser applicationUser);
+        Task AffectRoles(ApplicationUser applicationUser, List<string> roles);
+        Task<List<String>> GetRolesByUser(ApplicationUser applicationUser);
         void Save();
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Models
 {
-    public class UserRoleViewModel
+    public class RoleCheckBox
     {
-        public ApplicationUser ApplicationUser { get; set; }
-        public List<RoleCheckBox> ApplicationRolesCheckBox { get; set; }
+        public ApplicationRole ApplicationRole { get; set; }
+        public bool  IsChecked { get; set; }
     }
 }

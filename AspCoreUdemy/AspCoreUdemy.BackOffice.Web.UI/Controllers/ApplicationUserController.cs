@@ -35,15 +35,37 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
             this._applicationUserRepository = applicationUserRepository;
             this._applicationRoleRepository = applicationRoleRepository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             List<UserRoleViewModel> userRoleViewModelList = new List<UserRoleViewModel>();
             var applicationUsers = this._applicationUserRepository.GetAll();
-            foreach(ApplicationUser user in applicationUsers)
+            foreach(ApplicationUser ApplicationUser in applicationUsers)
             {
-                var roles = this._applicationUserRepository.GetRolesByUser(user);
-                userRoleViewModelList.Add(new UserRoleViewModel { ApplicationUser = user, Roles = (IList<string>) roles });
+
+                List<string> strRoles = await this._applicationUserRepository.GetRolesByUser(ApplicationUser);
+
+                List<RoleCheckBox> applicationRolesCheckBox = new List<RoleCheckBox>();
+
+
+                foreach (ApplicationRole role in this._applicationRoleRepository.GetAll())
+                {
+                    if (strRoles.Contains(role.RoleName))
+                    {
+                        applicationRolesCheckBox.Add(new RoleCheckBox { ApplicationRole = role, IsChecked = true });
+                    }
+                    else
+                    {
+                        applicationRolesCheckBox.Add(new RoleCheckBox { ApplicationRole = role, IsChecked = true });
+                    }
+
+                }
+
+                userRoleViewModelList.Add(item: new UserRoleViewModel { ApplicationUser = ApplicationUser, ApplicationRolesCheckBox = applicationRolesCheckBox });
+                
             }
+
+
+
             return View(userRoleViewModelList);
         }
 
@@ -68,16 +90,47 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            var applicationUser = await this._applicationUserRepository.GetById(id);
+            ApplicationUser ApplicationUser = await this._applicationUserRepository.GetById(id);
+            List<string> strRoles = await this._applicationUserRepository.GetRolesByUser(ApplicationUser);
+
+            List<RoleCheckBox> applicationRolesCheckBox = new List<RoleCheckBox>();
+
+
+            foreach (ApplicationRole role in this._applicationRoleRepository.GetAll())
+            {
+                if(strRoles.Contains(role.RoleName))
+                {
+                    applicationRolesCheckBox.Add(new RoleCheckBox { ApplicationRole = role, IsChecked = true });
+                }
+                else
+                {
+                    applicationRolesCheckBox.Add(new RoleCheckBox { ApplicationRole = role, IsChecked = false });
+                }
+
+            }
+
             this.ViewBag.RoleList = this._applicationRoleRepository.GetAll();
 
-            return View(applicationUser);
+
+            UserRoleViewModel userRoleViewModel = new UserRoleViewModel { ApplicationUser = ApplicationUser, ApplicationRolesCheckBox = applicationRolesCheckBox };
+            return View(userRoleViewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(ApplicationUser applicationUser)
+        public async Task<IActionResult> Edit(UserRoleViewModel userRoleViewModel)
         {
-            await this._applicationUserRepository.Edit(applicationUser);
+            List<string> roles = new List<string>();
+            foreach(RoleCheckBox roleCheckBox in userRoleViewModel.ApplicationRolesCheckBox)
+            {
+                if (roleCheckBox.IsChecked)
+                {
+                    roles.Add(roleCheckBox.ApplicationRole.RoleName);
+                }
+            }
+
+            await this._applicationUserRepository.Edit(userRoleViewModel.ApplicationUser);
+
+            await this._applicationUserRepository.AffectRoles(userRoleViewModel.ApplicationUser, roles);
 
             return RedirectToAction("Index");
         }

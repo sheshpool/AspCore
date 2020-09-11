@@ -9,7 +9,7 @@ namespace AspCoreUdemy.Core.Data.Service
 {
     public class MockApplicationUserRepository : IApplicationUserRepository
     {
-        public Task AffectRole(ApplicationUser applicationUser, ApplicationRole applicationRole)
+        public Task AffectRoles(ApplicationUser applicationUser, List<string> roles)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace AspCoreUdemy.Core.Data.Service
             throw new NotImplementedException();
         }
 
-        public Task<IList<string>> GetRolesByUser(ApplicationUser applicationUser)
+        Task<List<string>> IApplicationUserRepository.GetRolesByUser(ApplicationUser applicationUser)
         {
             throw new NotImplementedException();
         }
