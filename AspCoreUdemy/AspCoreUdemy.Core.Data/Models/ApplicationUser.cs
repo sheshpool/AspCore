@@ -13,6 +13,7 @@ namespace AspCoreUdemy.Core.Data.Models
         {
         }
         
+        
         [PersonalData]
         [Column(TypeName = "varchar(100)")]
         public string FirstName { get; set; }

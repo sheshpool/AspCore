@@ -11,9 +11,8 @@ namespace AspCoreUdemy.Core.Data.Infrastructure
         List<ApplicationUser> GetAll();
         Task<ApplicationUser> GetById(string id);
         Task Insert(ApplicationUser applicationUser);
-        Task Edit(ApplicationUser applicationUser);
+        Task Edit(ApplicationUser applicationUser, List<string> roles);
         Task Delete(ApplicationUser applicationUser);
-        Task AffectRoles(ApplicationUser applicationUser, List<string> roles);
         Task<List<String>> GetRolesByUser(ApplicationUser applicationUser);
         void Save();
     }

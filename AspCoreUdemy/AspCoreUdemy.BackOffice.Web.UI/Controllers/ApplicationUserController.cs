@@ -128,9 +128,7 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
                 }
             }
 
-            await this._applicationUserRepository.Edit(userRoleViewModel.ApplicationUser);
-
-            await this._applicationUserRepository.AffectRoles(userRoleViewModel.ApplicationUser, roles);
+            await this._applicationUserRepository.Edit(userRoleViewModel.ApplicationUser, roles);
 
             return RedirectToAction("Index");
         }

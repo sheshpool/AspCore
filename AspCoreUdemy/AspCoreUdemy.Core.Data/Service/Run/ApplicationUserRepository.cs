@@ -64,47 +64,42 @@ namespace AspCoreUdemy.Core.Data.Service.Run
             throw new NotImplementedException();
         }
 
-        public async Task AffectRoles(ApplicationUser applicationUser, List<string> roles)
-        {
-            List<ApplicationRole> applicationRoles = this._applicationRoleRepository.GetAll();
-
-            foreach (ApplicationRole applicationRole in applicationRoles)
-            {
-                if(roles.Contains(applicationRole.RoleName))
-                {
-                    if (!await this._userManager.IsInRoleAsync(applicationUser, applicationRole.Name))
-                    {
-                        var result = await this._userManager.AddToRoleAsync(applicationUser, applicationRole.Name); 
-                    }
-                }
-                else
-                {
-                    if (await this._userManager.IsInRoleAsync(applicationUser, applicationRole.Name))
-                    {
-                        var result = await this._userManager.RemoveFromRoleAsync(applicationUser, applicationRole.Name);
-                    }
-                }                
-            }
-        }
-
         public Task Insert(ApplicationUser applicationUser)
         {
             throw new NotImplementedException();
         }
 
-        public async Task Edit(ApplicationUser applicationUser)
+        public async Task Edit(ApplicationUser applicationUser, List<string> roles)
         {
-
-            // Get the existing student from the db
-            var _applicationUser = (ApplicationUser) await this._userManager.FindByIdAsync(applicationUser.Id);
-
-            // Update it with the values from the view model
+            var _applicationUser = (ApplicationUser)await this._userManager.FindByIdAsync(applicationUser.Id);
             _applicationUser.FirstName = applicationUser.FirstName;
             _applicationUser.LastName = applicationUser.LastName;
             _applicationUser.Email = applicationUser.Email;
+            _applicationUser.UserName = applicationUser.UserName;
 
             // Apply the changes if any to the db
             await _userManager.UpdateAsync(_applicationUser);
+
+
+            List<ApplicationRole> applicationRoles = this._applicationRoleRepository.GetAll();
+
+            foreach (ApplicationRole applicationRole in applicationRoles)
+            {
+                if (roles.Contains(applicationRole.RoleName))
+                {
+                    if (!await this._userManager.IsInRoleAsync(_applicationUser, applicationRole.Name))
+                    {
+                        var result = await this._userManager.AddToRoleAsync(_applicationUser, applicationRole.Name);
+                    }
+                }
+                else
+                {
+                    if (await this._userManager.IsInRoleAsync(_applicationUser, applicationRole.Name))
+                    {
+                        var result = await this._userManager.RemoveFromRoleAsync(_applicationUser, applicationRole.Name);
+                    }
+                }
+            }
         }
     }
 }
