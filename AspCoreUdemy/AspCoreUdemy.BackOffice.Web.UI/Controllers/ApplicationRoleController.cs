@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class ApplicationRoleController : Controller
     {
         private readonly DefaultContext _context = null;

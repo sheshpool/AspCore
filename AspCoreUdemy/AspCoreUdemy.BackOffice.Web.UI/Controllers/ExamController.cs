@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Contributor")]
     public class ExamController : Controller
     {
         private readonly DefaultContext _context = null;

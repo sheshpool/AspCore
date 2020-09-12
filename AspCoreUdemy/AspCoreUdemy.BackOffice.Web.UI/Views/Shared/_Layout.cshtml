@@ -24,24 +24,34 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Exam Session
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Exam Management
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" asp-area="" asp-controller="Exam" asp-action="Index">Exam</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Subject" asp-action="Index">Subject</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Question" asp-action="Index">Question</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Response" asp-action="Index">Response</a>
-                            </div>
-                        </li>
-                 
-                        @if (!ViewContext.HttpContext.User.IsInRole("Publicx"))
+
+                        @if (ViewContext.HttpContext.User.IsInRole("Admin") ||
+                         ViewContext.HttpContext.User.IsInRole("Contributor") ||
+                         ViewContext.HttpContext.User.IsInRole("Public")
+                         )
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    Exam Session
+                                </a>
+                            </li>
+                        }
+                        @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Contributor"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Exam Management
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Exam" asp-action="Index">Exam</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Subject" asp-action="Index">Subject</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Question" asp-action="Index">Question</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Response" asp-action="Index">Response</a>
+                                </div>
+                            </li>
+                        }
+
+                        @if (ViewContext.HttpContext.User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

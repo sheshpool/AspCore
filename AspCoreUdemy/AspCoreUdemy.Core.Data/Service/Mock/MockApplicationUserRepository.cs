@@ -24,22 +24,17 @@ namespace AspCoreUdemy.Core.Data.Service
             throw new NotImplementedException();
         }
 
-        public Task Insert(ApplicationUser applicationUser)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
         Task<List<string>> IApplicationUserRepository.GetRolesByUser(ApplicationUser applicationUser)
         {
             throw new NotImplementedException();
         }
 
         public Task Edit(ApplicationUser applicationUser, List<string> roles)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Create(ApplicationUser applicationUser, List<string> roles, string password)
         {
             throw new NotImplementedException();
         }

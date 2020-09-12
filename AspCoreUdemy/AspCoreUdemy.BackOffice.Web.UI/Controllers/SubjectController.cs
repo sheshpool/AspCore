@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Contributor")]
     public class SubjectController : Controller
     {
         private readonly DefaultContext _context = null;

@@ -10,10 +10,9 @@ namespace AspCoreUdemy.Core.Data.Infrastructure
     {
         List<ApplicationUser> GetAll();
         Task<ApplicationUser> GetById(string id);
-        Task Insert(ApplicationUser applicationUser);
         Task Edit(ApplicationUser applicationUser, List<string> roles);
+        Task Create(ApplicationUser applicationUser, List<string> roles, string password);
         Task Delete(ApplicationUser applicationUser);
         Task<List<String>> GetRolesByUser(ApplicationUser applicationUser);
-        void Save();
     }
 }

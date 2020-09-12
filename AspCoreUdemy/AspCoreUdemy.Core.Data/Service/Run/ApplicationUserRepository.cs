@@ -18,8 +18,8 @@ namespace AspCoreUdemy.Core.Data.Service.Run
 
         public ApplicationUserRepository
             (
-                DefaultContext context, 
-                RoleManager<ApplicationRole> roleManager, 
+                DefaultContext context,
+                RoleManager<ApplicationRole> roleManager,
                 UserManager<ApplicationUser> userManager,
                 IApplicationRoleRepository applicationRoleRepository
             )
@@ -55,18 +55,8 @@ namespace AspCoreUdemy.Core.Data.Service.Run
 
         public async Task<List<string>> GetRolesByUser(ApplicationUser applicationUser)
         {
-            List<string> applicationRolesList  = (List<string>)await this._userManager.GetRolesAsync(applicationUser);
+            List<string> applicationRolesList = (List<string>)await this._userManager.GetRolesAsync(applicationUser);
             return applicationRolesList;
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Insert(ApplicationUser applicationUser)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task Edit(ApplicationUser applicationUser, List<string> roles)
@@ -97,6 +87,34 @@ namespace AspCoreUdemy.Core.Data.Service.Run
                     if (await this._userManager.IsInRoleAsync(_applicationUser, applicationRole.Name))
                     {
                         var result = await this._userManager.RemoveFromRoleAsync(_applicationUser, applicationRole.Name);
+                    }
+                }
+            }
+        }
+
+        public async Task Create(ApplicationUser applicationUser, List<string> roles, string password)
+        {
+            
+            IdentityResult result = await _userManager.CreateAsync(applicationUser, password);
+
+
+            if (result.Succeeded)
+            {
+                foreach (string role in roles)
+                {
+
+                    var newRole = new ApplicationRole() { RoleName = role, Name = role, NormalizedName = role, CreationDateTime = DateTime.Now };
+
+                    var roleExist = await _roleManager.RoleExistsAsync(role);
+
+                    if (!roleExist)
+                    {
+                        var resultRole = await _roleManager.CreateAsync(newRole);
+                    }
+
+                    if (result.Succeeded)
+                    {
+                        var result1 = await _userManager.AddToRoleAsync(applicationUser, role);
                     }
                 }
             }

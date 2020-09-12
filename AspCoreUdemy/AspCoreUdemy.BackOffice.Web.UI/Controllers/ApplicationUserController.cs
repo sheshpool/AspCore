@@ -18,7 +18,7 @@ using AspCoreUdemy.BackOffice.Web.UI.Models;
 
 namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class ApplicationUserController : Controller
     {
         private readonly DefaultContext _context = null;
@@ -46,7 +46,6 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
 
                 List<RoleCheckBox> applicationRolesCheckBox = new List<RoleCheckBox>();
 
-
                 foreach (ApplicationRole role in this._applicationRoleRepository.GetAll())
                 {
                     if (strRoles.Contains(role.RoleName))
@@ -57,11 +56,8 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
                     {
                         applicationRolesCheckBox.Add(new RoleCheckBox { ApplicationRole = role, IsChecked = true });
                     }
-
                 }
-
-                userRoleViewModelList.Add(item: new UserRoleViewModel { ApplicationUser = ApplicationUser, ApplicationRolesCheckBox = applicationRolesCheckBox });
-                
+                userRoleViewModelList.Add(item: new UserRoleViewModel { ApplicationUser = ApplicationUser, ApplicationRolesCheckBox = applicationRolesCheckBox });              
             }
 
 
@@ -132,5 +128,61 @@ namespace AspCoreUdemy.CoreApp.Web.UI.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Create()
+        {
+
+            ApplicationUser ApplicationUser = new ApplicationUser();
+
+            List<RoleCheckBox> RoleCheckBoxs = new List<RoleCheckBox>();
+
+            foreach (ApplicationRole role in this._applicationRoleRepository.GetAll())
+            {
+                RoleCheckBoxs.Add(new RoleCheckBox { ApplicationRole = role, IsChecked = false });
+            }
+
+            this.ViewBag.RoleList = this._applicationRoleRepository.GetAll();
+
+            UserViewModel userViewModel = new UserViewModel
+            {
+                FirstName = null,
+                LastName = null,
+                Email = null,
+                Password = null,
+                ConfirmPassword = null,
+                RoleCheckBoxs = RoleCheckBoxs
+            };
+
+            return View(userViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(UserViewModel userViewModel)
+        {
+            List<string> roles = new List<string>();
+            foreach(RoleCheckBox roleCheckBox in userViewModel.RoleCheckBoxs)
+            {
+                if(roleCheckBox.IsChecked)
+                {
+                    roles.Add(roleCheckBox.ApplicationRole.RoleName);
+                }
+            }
+
+            ApplicationUser user = new ApplicationUser
+            {
+                UserName = userViewModel.Email,
+                Email = userViewModel.Email,
+                FirstName = userViewModel.FirstName,
+                LastName = userViewModel.LastName
+            };
+
+            if (ModelState.IsValid)
+            {
+                await _applicationUserRepository.Create(user, roles, userViewModel.Password);
+            }
+
+            return RedirectToAction("Index");
+        }
+            
     }
 }

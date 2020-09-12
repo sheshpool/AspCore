@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AspCoreUdemy.BackOffice.Web.UI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Contributor, public")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
